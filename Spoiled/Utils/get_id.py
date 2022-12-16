@@ -1,8 +1,6 @@
 from pyrogram.types import Message
 
 async def get_id(_, m: Message):
-    if m.from_user.is_self:
-        return None
     if str(m.chat.id)[0] != "-":
         return int(m.chat.id)
     if not m.reply_to_message:
