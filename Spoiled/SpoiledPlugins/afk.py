@@ -3,6 +3,8 @@ from pyrogram.types import Message
 from Spoiled.Database.afk import add_afk, remove_afk, is_afk, get_afk_details
 import time 
 from Spoiled.Utils import eor
+from . import add_command
+from config import STUFF
 
 def get_readable_time(seconds: int) -> str:
     count = 0
@@ -59,6 +61,8 @@ async def afk_watcher(_, m):
     if m.from_user.id == id:
         try:
             if m.text.split()[0][1:].lower() == "afk":
+                return
+            if m.text.split()[0].lower() == "brb":
                 return
         except:
             pass
