@@ -70,6 +70,8 @@ async def backup(_, m):
     PTI= str(LVL-ST).index(".")
     PT = str(LVL-ST)[0:PTI]
     return await eor(m, f"all msges backed up successfully...\n\nTime Elapsed :- {PT}s")
+    time.sleep(5)
+    await m.delete()
 
 @Client.on_message(filters.command("setlog", hl) & filters.me)
 async def set_log(_, m):
