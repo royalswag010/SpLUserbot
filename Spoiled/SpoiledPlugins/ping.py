@@ -1,6 +1,6 @@
 from pyrogram import Client, filters 
 from pyrogram.types import Message
-from Spoiled.Utils import eor
+from Spoiled.Utils import eor, verify
 import time
 from config import IMAGES, STUFF
 from . import startTime
@@ -54,6 +54,9 @@ def grt(seconds: int) -> str:
 
 @Client.on_message(filters.command("ping", hl))
 async def alive_or_ping(_, m):
+    x = await verify(_, m)
+    if not x:
+        return
     l = await _.get_me()
     st = time.time()
     ok = await eor(m, "`Checking...`")
