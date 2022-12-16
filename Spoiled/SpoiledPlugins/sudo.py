@@ -11,7 +11,7 @@ async def add_or_del_sudo(_, m):
     try:
         id = await get_id(m)
     except:
-        return await eor(m, f"<i>{hl}addsudo or {hl}rmvsudo [Reply | Username | Id]</id>")
+        return await eor(m, f"<i>{hl}addsudo or {hl}rmsudo [Reply | Username | Id]</id>")
     sudo = await is_sudo(id)
     if m.text.split()[0][1].lower() == "r":
         if not sudo:
@@ -23,6 +23,7 @@ async def add_or_del_sudo(_, m):
     await add_sudo(id)
     return await eor(m, f"<i>{id} is added to sudo...!</i>")
 
+@Client.on_message(filters.command("sudos", hl))
 async def sudo_users(_, m):
     me = await _.get_me()
     sudo = await is_sudo(m.from_user.id)
