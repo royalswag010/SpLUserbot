@@ -11,7 +11,7 @@ def convert(txt):
     tts.save(x)
     return x
 
-@Client.on_message(filters.command("tts"))
+@Client.on_message(filters.command("tts", hl))
 async def teeteeyess(_, m):
     x = await verify(_, m)
     if not x:
