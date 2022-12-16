@@ -3,7 +3,6 @@ from pyrogram.types import Message
 from Spoiled.Utils import eor
 import time
 from config import IMAGES, STUFF
-from .afk import get_readable_time as grt
 from . import startTime
 
 hl = STUFF.COMMAND_HANDLER
@@ -29,6 +28,29 @@ TEXT = """
 🌟 .    ☆    🌙
 
 """
+
+def grt(seconds: int) -> str:
+    count = 0
+    ping_time = ""
+    time_list = []
+    time_suffix_list = ["s", "m", "h", "days"]
+    while count < 4:
+        count += 1
+        if count < 3:
+            remainder, result = divmod(seconds, 60)
+        else:
+            remainder, result = divmod(seconds, 24)
+        if seconds == 0 and remainder == 0:
+            break
+        time_list.append(int(result))
+        seconds = int(remainder)
+    for i in range(len(time_list)):
+        time_list[i] = str(time_list[i]) + time_suffix_list[i]
+    if len(time_list) == 4:
+        ping_time += time_list.pop() + ", "
+    time_list.reverse()
+    ping_time += ":".join(time_list)
+    return ping_time
 
 @Client.on_message(filters.command("ping", hl))
 async def alive_or_ping(_, m):
