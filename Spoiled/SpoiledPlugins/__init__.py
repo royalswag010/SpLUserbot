@@ -1,3 +1,7 @@
+import time
+
+startTime = time.time()
+
 COMMANDS_HELP = {}
 
 def add_command(command, help):
