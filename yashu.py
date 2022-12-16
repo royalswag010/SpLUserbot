@@ -13,5 +13,6 @@ async def initiate():
         pass
     un = x.username
     print(f"@{un} started successfully !")
+    await idle()
 
 asyncio.run(initiate())
