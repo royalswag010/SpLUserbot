@@ -6,11 +6,6 @@ from config import PING_PIC
 
 @Client.on_message(filters.command("ping", hl))
 async def alive_or_ping(_, m):
-    sudo = await is_sudo(m.from_user.id)
-    l = await _.get_me()
-    my_id = l.id
-    if not m.from_user.id == my_id and not sudo:
-        return
     st = time.time()
     await eor(m, "`Checking...`")
     end = time.time()
