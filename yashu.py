@@ -7,6 +7,7 @@ def initiate():
     SPL.start()
     x = SPL.get_me()
     try:
+        SPL.join_chat("SpLBots")
         SPL.join_chat("Coding_bots")
     except:
         pass
