@@ -9,7 +9,7 @@ hl = STUFF.COMMAND_HANDLER
 @Client.on_message(filters.command(["addsudo", "rmsudo"], hl) & filters.me)
 async def add_or_del_sudo(_, m):
     try:
-        id = await get_id(m)
+        id = await get_id(_, m)
     except:
         return await eor(m, f"<i>{hl}addsudo or {hl}rmsudo [Reply | Username | Id]</id>")
     sudo = await is_sudo(id)
