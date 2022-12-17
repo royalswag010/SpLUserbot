@@ -8,3 +8,4 @@ gTTS
 opencv-python-headless
 requests
 bs4
+aiohttp
