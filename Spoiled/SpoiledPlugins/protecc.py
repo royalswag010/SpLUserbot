@@ -1,6 +1,7 @@
 from Spoiled.Database.protecc import *
 from pyrogram import Client, filters
 from . import hl, eor
+from .watchers import protecc_watcher
 
 @Client.on_message(filters.command(["autowaifu", "aw"], hl) & filters.group & filters.me)
 async def waifer(_, m):
@@ -78,4 +79,4 @@ async def rmhusbander(_, m):
     x = (await _.get_chat(id)).title
     await eor(m, f"{x} is removed from husbando chats !")
 
-        
+@Client.on_message(filters.group, group=protecc_watcher)
