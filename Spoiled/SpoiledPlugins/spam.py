@@ -40,7 +40,7 @@ async def spam_func(_, m):
             txt = b.split(None, 1)[1]
             caption = True
         except:
-            return pass
+            pass
     if type == "photo":
         id = reply.photo.file_id
         for u in range(0, count):
