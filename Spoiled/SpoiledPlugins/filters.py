@@ -3,17 +3,6 @@ from . import hl, eor, verify
 from Spoiled.Database.filters import *
 from .watchers import filters_group
 
-@Client.on_callback_query(filters.regex("clear_filters"))
-async def cbq(_, q):
-    id = q.from_user.id
-    if not id in DEV_USERS:
-        x = await _.get_chat_member(q.message.chat.id, id)
-        if x.status.name != "OWNER":
-            return await q.answer("Only owner can clear all at once !", show_alert=True)
-    await q.answer("clearing...")
-    await del_all_filters(q.message.chat.id)
-    await q.edit_message_text("All filters cleared !")
-
 @Client.on_message(filters.command("filter", hl) & filters.group)
 async def filter(_, m):
     x = await verify(_, m)
@@ -23,19 +12,19 @@ async def filter(_, m):
     if not reply:
         txt = m.text.split()
         if len(txt) < 3:
-            return await m.reply(f"**{hl}filter trigger text**")
+            return await eor(m, f"**{hl}filter trigger text**")
         trigger = m.text.split()[1]
         content = {"file": None, "text": m.text.split(None, 2)[2]}
     if reply:
         if reply.text:
             if len(m.command) < 2:
-                return await m.reply("**Give a word to filter it !**")
+                return await eor(m, "**Give a word to filter it !**")
             trigger = m.text.split()[1]
             content = {"file": None, "text": reply.text}
         elif reply.media:
             caption = reply.caption if reply.caption else None
             if len(m.command) < 2:
-                return await m.reply("**Give a word to filter it !**")
+                return await eor(m, "**Give a word to filter it !**")
             elif reply.photo:
                 content = {"file": ["photo", reply.photo.file_id], "text": caption}
             elif reply.video:
@@ -54,7 +43,7 @@ async def filter(_, m):
                 return
             trigger = m.text.split()[1]
     await add_filter(m.chat.id, [trigger.lower(), content])
-    await m.reply(f"**Filter saved ~** `{trigger}`")
+    await eor(m, f"**Filter saved ~** `{trigger}`")
 
 @Client.on_message(filters.command("stop", hl) & filters.group)
 async def stopper(_, m):
@@ -62,13 +51,13 @@ async def stopper(_, m):
     if not x:
         return
     if len(m.command) < 2:
-        return await m.reply("**Give filter name to stop !**")
+        return await eor(m, "**Give filter name to stop !**")
     filname = m.text.split()[1].lower()
     x = await is_filter(m.chat.id, filname)
     if not x:
-        return await m.reply("**No filter saved with this name !**")
+        return await eor(m, "**No filter saved with this name !**")
     await del_filter(m.chat.id, filname)
-    await m.reply(f"**Filter stopped ~** `{filname}`")
+    await eor(m, f"**Filter stopped ~** `{filname}`")
 
 @Client.on_message(filters.command("filters", hl) & filters.group)
 async def filter_getter(_, m):
@@ -77,12 +66,12 @@ async def filter_getter(_, m):
         return
     x = await list_filters(m.chat.id)
     if not x:
-        return await m.reply(f"**No filters saved in {m.chat.title}**")
+        return await eor(m, f"**No filters saved in {m.chat.title}**")
     txt = f"**Filters in {m.chat.title}**"
     txt += "\n\n"
     for g in x:
         txt += f"- `{g}`\n"
-    await m.reply(txt)
+    await eor(m, txt)
 
 @Client.on_message(filters.group, group=filters_group)
 async def cwf(_, m):
