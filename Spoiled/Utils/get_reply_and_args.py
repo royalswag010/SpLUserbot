@@ -22,5 +22,6 @@ async def get_reply_and_args(m):
         type = "sticker"
     elif reply.text:
         type = "text"
+    return type, args
     
         
