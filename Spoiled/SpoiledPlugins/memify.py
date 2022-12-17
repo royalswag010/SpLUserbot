@@ -16,8 +16,8 @@ async def handler(_, m):
         return await eor(m, "Reply to an image or a sticker !")
     if not m.reply_to_message.sticker and not m.reply_to_message.photo:
         return await eor(m, "Reply to an image or a sticker !")
-    file = await m.reply_to_message.download()
     msg = await eor(m, f"`Memifying this image! (」ﾟﾛﾟ)｣ `")
+    file = await m.reply_to_message.download()
     if len(m.command) == 1:
         return await msg.edit("You might want to try `/mmf text`")
     text = m.text.split(None, 1)[1]
