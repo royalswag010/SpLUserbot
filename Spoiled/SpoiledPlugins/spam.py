@@ -32,7 +32,7 @@ async def spam_func(_, m):
         caption = False
     type = a.split("-")[0]
     try:
-        count = int(b[0])
+        count = int(b.split()[0])
     except:
         return await eor(m, f"{hl}spam [count] [text]")
     if not caption:
