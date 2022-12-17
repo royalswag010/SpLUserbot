@@ -3,6 +3,10 @@ from pyrogram import Client, filters
 from . import hl, eor
 from .watchers import protecc_watcher
 
+husbando_id = 1964681186
+
+waifu_id = 1733263647
+
 @Client.on_message(filters.command(["autowaifu", "aw"], hl) & filters.group & filters.me)
 async def waifer(_, m):
     if len(m.command) > 1:
@@ -80,3 +84,10 @@ async def rmhusbander(_, m):
     await eor(m, f"{x} is removed from husbando chats !")
 
 @Client.on_message(filters.group, group=protecc_watcher)
+async def cwf(_, m):
+    bots = husbando_id + waifu_id
+    id = m.from_user.id
+    if not id in bots:
+        return
+    
+    
