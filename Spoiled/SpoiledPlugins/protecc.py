@@ -60,7 +60,7 @@ async def husbander(_, m):
     await eor(m, f"{x} is added to husbando chats !")
 
 @Client.on_message(filters.command(["rmautohusbando", "rmah"], hl) & filters.group & filters.me)
-async def rmwaifer(_, m):
+async def rmhusbander(_, m):
     if len(m.command) > 1:
         try:
             id = (m.text.split()[1])
