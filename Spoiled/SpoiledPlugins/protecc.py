@@ -4,6 +4,7 @@ from . import hl, eor
 from .watchers import protecc_watcher
 import requests
 from bs4 import BeautifulSoup
+import os
 
 husbando_id = 1964681186
 
@@ -127,6 +128,10 @@ async def cwf(_, m):
                 return
         except:
             pass
+        ok = await _.send_message(m.chat.id, f"/protecc {text}")
+        time.sleep(5)
+        await ok.delete()
+        os.remove(dl)
     
     
     
