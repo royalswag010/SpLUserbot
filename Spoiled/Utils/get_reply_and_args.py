@@ -22,6 +22,11 @@ async def get_reply_and_args(m):
         type = "sticker"
     elif reply.text:
         type = "text"
+    else:
+        type = None
+    if reply:
+        if reply.caption:
+            type += "-caption"
     return type, args
     
         
