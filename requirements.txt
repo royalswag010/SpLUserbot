@@ -6,3 +6,5 @@ pillow
 telegraph
 gTTS
 opencv-python-headless
+requests
+bs4
