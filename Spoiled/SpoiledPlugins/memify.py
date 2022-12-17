@@ -14,7 +14,7 @@ async def handler(_, m):
         return
     if not m.reply_to_message:
         return await eor(m, "Reply to an image or a sticker !")
-    if not m.reply_to_message.sticker or not m.reply_to_message.photo:
+    if not m.reply_to_message.sticker and not m.reply_to_message.photo:
         return await eor(m, "Reply to an image or a sticker !")
     file = await m.reply_to_message.download()
     msg = await eor(m, f"`Memifying this image! (」ﾟﾛﾟ)｣ `")
