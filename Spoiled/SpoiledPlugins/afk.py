@@ -5,6 +5,7 @@ import time
 from Spoiled.Utils import eor
 from . import add_command
 from config import STUFF
+from .watchers import afk_watcher
 
 def get_readable_time(seconds: int) -> str:
     count = 0
@@ -43,7 +44,7 @@ async def set_afk(_, m):
     return await eor(m, f"<i>I shall be going AFK...</i>")
 
 USER = []
-@Client.on_message(group=1)
+@Client.on_message(group=afk_watcher)
 async def afk_watcher(_, m):
     global USER
     if not USER:
