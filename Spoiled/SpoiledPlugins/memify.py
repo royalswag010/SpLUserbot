@@ -7,14 +7,14 @@ from Spoiled.Utils import eor, verify
 
 hl = STUFF.COMMAND_HANDLER
 
-@Client.on_message(filters.command("mmf", hl))
+@Client.on_message(filters.command(["memify", "mmf"], hl))
 async def handler(_, m):
     x = await verify(_, m)
     if not x:
         return
     if not m.reply_to_message:
         return await eor(m, "Reply to an image or a sticker !")
-    if not m.reply_to_message.sticker:
+    if not m.reply_to_message.sticker or not m.reply_to_message.photo:
         return await eor(m, "Reply to an image or a sticker !")
     file = await m.reply_to_message.download()
     msg = await eor(m, f"`Memifying this image! (」ﾟﾛﾟ)｣ `")
