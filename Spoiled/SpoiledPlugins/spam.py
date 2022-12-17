@@ -41,30 +41,31 @@ async def spam_func(_, m):
             caption = True
         except:
             pass
+    blank = ""
     if type == "photo":
         id = reply.photo.file_id
         for u in range(0, count):
-            await _.send_photo(m.chat.id, id, caption=f"{txt if caption else ""}")
+            await _.send_photo(m.chat.id, id, caption=f"{txt if caption else blank}")
     elif type == "video":
         id = reply.video.file_id
         for u in range(0, count):
-            await _.send_video(m.chat.id, id, caption=f"{txt if caption else ""}")
+            await _.send_video(m.chat.id, id, caption=f"{txt if caption else blank}")
     elif type == "document":
         id = reply.document.file_id
         for u in range(0, count):
-            await _.send_document(m.chat.id, id, caption=f"{txt if caption else ""}", force_document=True)
+            await _.send_document(m.chat.id, id, caption=f"{txt if caption else blank}", force_document=True)
     elif type == "animation":
         id = reply.animation.file_id
         for u in range(0, count):
-            await _.send_animation(m.chat.id, id, caption=f"{txt if caption else ""}")
+            await _.send_animation(m.chat.id, id, caption=f"{txt if caption else blank}")
     elif type == "voice":
         id = reply.voice.file_id
         for u in range(0, count):
-            await _.send_voice(m.chat.id, id, caption=f"{txt if caption else ""}")
+            await _.send_voice(m.chat.id, id, caption=f"{txt if caption else blank}")
     elif type == "audio":
         id = reply.audio.file_id
         for u in range(0, count):
-            await _.send_audio(m.chat.id, id, caption=f"{txt if caption else ""}")
+            await _.send_audio(m.chat.id, id, caption=f"{txt if caption else blank}")
     elif type == "text":
         id = reply.text
         for u in range(0, count):
