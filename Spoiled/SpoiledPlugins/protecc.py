@@ -2,6 +2,8 @@ from Spoiled.Database.protecc import *
 from pyrogram import Client, filters
 from . import hl, eor
 from .watchers import protecc_watcher
+import requests
+from bs4 import BeautifulSoup
 
 husbando_id = 1964681186
 
@@ -85,9 +87,46 @@ async def rmhusbander(_, m):
 
 @Client.on_message(filters.group, group=protecc_watcher)
 async def cwf(_, m):
-    bots = husbando_id + waifu_id
+    bots = [husbando_id, waifu_id]
     id = m.from_user.id
     if not id in bots:
         return
+    x = await is_waifu_chat(m.chat.id)
+    y = await is_husbando_chat(m.chat.id)
+    if not x and not y:
+        return
+    if id == husbando_id:
+        if not y:
+            return
+    elif id == waifu_id:
+        if not x:
+            return
+    if m.photo:
+        dl = await m.download()
+        file = {"encoded_image": (dl, open(dl, "rb"))}
+        grs = requests.post(
+               "https://www.google.com/searchbyimage/upload",
+                files=file,
+                allow_redirects=False,
+            )
+        loc = grs.headers.get("Location")
+        response = requests.get(
+            loc,
+            headers={
+            "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:58.0) Gecko/20100101 Firefox/58.0"
+                    },
+                )
+        qtt = BeautifulSoup(response.text, "html.parser")
+        div = qtt.find_all("div", {"class": "r5a77d"})[0]
+        alls = div.find("a")
+        text = alls.text
+        try:
+            if "cg" in text:
+                return
+            if "fictional character" in text:
+                return
+        except:
+            pass
+    
     
     
