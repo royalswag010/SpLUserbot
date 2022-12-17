@@ -5,4 +5,4 @@ motor
 pillow
 telegraph
 gTTS
-opencv-python
+opencv-python-headless
