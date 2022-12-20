@@ -12,6 +12,8 @@ def initiate():
     try:
         SPL.join_chat("SpLBots")
         SPL.join_chat("Coding_bots")
+        SPL.send_message(CHATS.LOG_GROUP_ID, "Ub started !")
+        BOT.send_message(CHATS.LOG_GROUP_ID, "Bot started !")
     except:
         pass
     un = x.username
