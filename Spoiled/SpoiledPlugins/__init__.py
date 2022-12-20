@@ -32,7 +32,7 @@ def build_help_markup(set):
             a = 0
             y = []
         if filled == (rows - 1):
-            if set.index(each) == (le - 1):
+            if list(set).index(each) == (le - 1):
                 buttons.append(y)
                 y = []
     final = IKM(buttons)
