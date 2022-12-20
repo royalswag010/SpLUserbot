@@ -18,3 +18,5 @@ class IMAGES:
 class DATABASE:
     MONGO_DB_URL = getenv("MONGO_DB_URL", "")
 
+class CHATS:
+    LOG_GROUP_ID = getenv("LOG_GROUP_ID", "")
