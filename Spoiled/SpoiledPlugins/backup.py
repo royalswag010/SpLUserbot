@@ -5,6 +5,7 @@ from Spoiled.Utils import eor
 from config import STUFF
 import time
 from pyrogram.errors import *
+from . import add_command
 import asyncio
 
 hl = STUFF.COMMAND_HANDLER
