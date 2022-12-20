@@ -2,7 +2,7 @@ from pyrogram import filters
 from Spoiled.SpoiledPlugins import COMMANDS_HELP
 from pyrogram.types import InlineKeyboardButton as IKB, InlineKeyboardMarkup as IKM
 from .inline import ma
-from Spoiled import BOT
+from pyrogram import Client as BOT
 
 back = IKM([[IKB("Back", callback_data="cmd_back")]])
 
