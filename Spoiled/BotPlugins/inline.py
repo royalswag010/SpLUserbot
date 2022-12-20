@@ -1,4 +1,4 @@
-from pyrogram.types InlineQueryResultPhoto as IQRP
+from pyrogram.types import InlineQueryResultPhoto as IQRP
 from Spoiled.SpoiledPlugins import build_help_markup, COMMANDS_HELP
 from pyrogram import Client
 
