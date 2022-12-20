@@ -12,6 +12,6 @@ for x in COMMANDS_HELP:
         await q.edit_message_text(COMMANDS_HELP[x], reply_markup=back)
 
 @Client.on_callback_query(filters.regex("cmd_back"))
-async cmd_back(_, q):
+async def cmd_back(_, q):
     await q.answer()
     await q.edit_message_text("Select from below buttons !", reply_markup=ma)
