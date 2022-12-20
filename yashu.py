@@ -2,7 +2,7 @@ from pyrogram import Client, idle
 from config import *
 
 SPL = Client(":SPL-USERBOT:", api_id=API.API_ID, api_hash=API.API_HASH, session_string=SECRETS.STRING_SESSION, plugins=dict(root="Spoiled/SpoiledPlugins"))
-BOT = Client(":SPL-BOT:", api_id=API.API_ID, api_hash=API.API_HASH, bot_token=SECRETS.BOT_TOKEN)
+BOT = Client(":SPL-BOT:", api_id=API.API_ID, api_hash=API.API_HASH, bot_token=SECRETS.BOT_TOKEN, plugins=dict(root="Spoiled/BotPlugins"))
 
 def initiate():
     SPL.start()
