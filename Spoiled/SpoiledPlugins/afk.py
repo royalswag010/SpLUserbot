@@ -110,3 +110,9 @@ async def afk_watcher(_, m):
                     if afk_reason == "None":
                         return await m.reply(f"<i>I'm AFK... \n\nSince {time_afk}</i>")
                     return await m.reply(f"<i>I'm AFK... \n\nSince {time_afk}\n\nReason :- {afk_reason}</i>")
+
+hl = STUFF.COMMAND_HANDLER
+command = f"Afk"
+help = f"{hl}afk | brb - sets you afk !"
+
+add_command(command, help)
