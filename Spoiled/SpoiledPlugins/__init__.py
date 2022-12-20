@@ -23,7 +23,7 @@ def build_help_markup(set):
     a = 0
     filled = 0
     for each in set:
-        x = IKB(each, callback_data=set[each].lower())
+        x = IKB(each, callback_data=each.lower())
         y.append(x)
         a += 1
         if a == 3:
