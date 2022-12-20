@@ -1,6 +1,6 @@
 from pyrogram.types import InlineQueryResultPhoto as IQRP
 from Spoiled.SpoiledPlugins import build_help_markup, COMMANDS_HELP
-from Spoiled import BOT
+from pyrogram import Client as BOT
 
 URL = "https://telegra.ph/file/c363fbe2341ae115bd8c1.jpg"
 
