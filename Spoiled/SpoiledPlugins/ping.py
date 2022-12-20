@@ -9,23 +9,10 @@ hl = STUFF.COMMAND_HANDLER
 
 TEXT = """
 
-🌙.     *       🌏   *   .      
-       .     🛰   
-    🚀       *       ☄️ 
-      . ┏━━━ 💫🦋🦋💫━━━┓
-  
-┃┃ ㅤ🧑‍💻ㅤㅤㅤρꪮꪀᧁ 
-┃┃
-┃┃ㅤㅤㅤ𝕊𝔼ℕ𝕊𝔼𝕀 : {}
-┃┃
-┃┃ㅤ✅ 𝐔𝐏𝐓𝐈𝐌𝐄 : {}
-┃┃
-┃┃ㅤ🚩{}𝐦𝐬
-┃┃
-ㅤ   ┗━━━ 💫🦋🦋💫━━━━┛
-. *       🌏          *
-               *       ☄️      
-🌟 .    ☆    🌙
+💞Pong💞
+
+   🔸️ {}
+   🔹️ 𝙼𝚢 𝙼𝚊𝚜𝚝𝚎𝚛 ~ {}
 
 """
 
@@ -70,6 +57,6 @@ async def alive_or_ping(_, m):
     xD += f"✥ 𝙐𝙗 𝘿𝙚𝙫 :- [𝚂𝙿𝙻](t.me/SpLBots)\n"
     await ok.delete()
     try:
-        return await m.reply_photo(IMAGES.PING_IMG, caption=TEXT.format(men, gtr, pong))
+        return await m.reply_photo(IMAGES.PING_IMG, caption=TEXT.format(pong, men))
     except:
-        return await m.reply(TEXT.format(men, gtr, pong))
+        return await m.reply(TEXT.format(pong, men))
