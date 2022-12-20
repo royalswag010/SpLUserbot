@@ -1,7 +1,7 @@
 from pyrogram import Client, filters
 from io import BytesIO
 from aiohttp import ClientSession
-from . import hl, eor, verify 
+from . import hl, eor, verify, add_command
 
 @Client.on_message(filters.command("carbon", hl))
 async def carbon_func(_, message):
@@ -27,3 +27,8 @@ async def make_carbon(code):
         image = BytesIO(await resp.read())
     image.name = "carbon.png"
     return image
+
+command = "Carbon"
+help = f"{hl}carbon [reply to a text]"
+
+add_command(command, help)
