@@ -19,7 +19,7 @@ for x in COMMANDS_HELP:
         qid = q.from_user.id
         if id != qid:
             if not await is_sudo(qid):
-                return
+                return await q.answer("You can't use these !\n\nCreate your own.", show_alert=True)
         await q.answer()
         await q.edit_message_text(COMMANDS_HELP[x], reply_markup=back)
 
