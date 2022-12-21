@@ -4,19 +4,14 @@ from pyrogram.types import InlineKeyboardButton as IKB, InlineKeyboardMarkup as 
 from .inline import ma
 from pyrogram import Client as BOT
 from Spoiled.Database.sudo import is_sudo
-from Spoiled import SPL
+from Spoiled.SpoiledPlugins.help import id
 
 back = IKM([[IKB("Back", callback_data="cmd_back")]])
-
-id = None
 
 while True:
     for x in COMMANDS_HELP:
         @BOT.on_callback_query(filters.regex(x.lower()))
         async def cbq_alpha(_, q):
-            global id
-            if not id:
-                id = (await SPL.get_me()).id
             qid = q.from_user.id
             if id != qid:
                 if not await is_sudo(qid):
@@ -26,9 +21,6 @@ while True:
 
 @BOT.on_callback_query(filters.regex("cmd_back"))
 async def cmd_back(_, q):
-    global id
-    if not id:
-        id = (await SPL.get_me()).id
     qid = q.from_user.id
     if id != qid:
         if not await is_sudo(qid):
