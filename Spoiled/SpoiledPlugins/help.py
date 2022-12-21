@@ -4,10 +4,11 @@ import time
 from Spoiled import BOT
 
 un = None
+id = None
 
 @Client.on_message(filters.command("help", hl))
 async def helper_func(_, m):
-    global un
+    global un, id
     x = await verify(_, m)
     if not x:
         return
@@ -15,6 +16,8 @@ async def helper_func(_, m):
     try:
         if not un:
             un = (await BOT.get_me()).username
+        if not id:
+            id = (await _.get_me()).id
         nice = await _.get_inline_bot_results(bot=un, query="inline_help")
         try:
             await ok.delete()
