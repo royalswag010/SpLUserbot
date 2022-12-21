@@ -10,6 +10,8 @@ class SECRETS:
 
 class STUFF:
     COMMAND_HANDLER = getenv("COMMAND_HANDLER", ".")
+    ALIVE_EMOJI = getenv("ALIVE_EMOJI", "")
+    ALIVE_TEXT = getenv("ALIVE_TEXT", "")
 
 class IMAGES:
     ALIVE_IMG = getenv("ALIVE_IMG", "")
