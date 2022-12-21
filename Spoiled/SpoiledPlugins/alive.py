@@ -41,6 +41,5 @@ async def aliver(_, m):
     y = x.index(".")
     x = x[0:y+2] + "ms"
     upt = get_uptime(time.time())
-    
-    
-    
+    men = (await _.get_me()).mention
+    await eor(ok, form.format(text, EMOTES, EMOTES, upt, EMOTES, men, EMOTES, x))
