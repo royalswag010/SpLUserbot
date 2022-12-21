@@ -2,6 +2,7 @@ import time
 from config import STUFF
 from Spoiled.Utils import *
 from pyrogram.types import InlineKeyboardButton as IKB, InlineKeyboardMarkup as IKM
+from .afk import get_readable_time
 
 hl = STUFF.COMMAND_HANDLER
 
