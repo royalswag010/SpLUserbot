@@ -38,4 +38,6 @@ def build_help_markup(set):
     final = IKM(buttons)
     return final
                 
-    
+def get_uptime(x):
+    z = get_readable_time(int(time.time()-x))
+    return z
