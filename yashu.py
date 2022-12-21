@@ -1,7 +1,7 @@
 from pyrogram import Client, idle
 from config import *
 from Spoiled import BOT, SPL
-
+#
 def initiate():
     SPL.start()
     BOT.start()
