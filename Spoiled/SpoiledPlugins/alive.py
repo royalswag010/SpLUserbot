@@ -40,6 +40,7 @@ async def aliver(_, m):
     x = str((time.time()-x)*1000)
     y = x.index(".")
     x = x[0:y+2] + "ms"
+    upt = get_uptime(time.time())
     
     
     
