@@ -32,7 +32,7 @@ form = """
 
 @Client.on_message(filters.command("alive", hl))
 async def aliver(_, m):
-    x = await verify(_, m):
+    x = await verify(_, m)
     if not x:
         return
     x = time.time()
