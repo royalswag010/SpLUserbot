@@ -39,5 +39,5 @@ def build_help_markup(set):
     return final
                 
 def get_uptime(x):
-    z = get_readable_time(int(time.time()-x))
+    z = get_readable_time(int(x-startTime))
     return z
