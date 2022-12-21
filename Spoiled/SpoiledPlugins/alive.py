@@ -39,7 +39,7 @@ async def aliver(_, m):
     ok = await eor(m, "`checking...`")
     x = str((time.time()-x)*1000)
     y = x.index(".")
-    x = x[0:y+2] + "ms"
+    x = f"`{x[0:y+2]}`"
     upt = get_uptime(time.time())
     men = (await _.get_me()).mention
     await eor(ok, form.format(text, EMOTES, EMOTES, upt, EMOTES, men, EMOTES, x))
