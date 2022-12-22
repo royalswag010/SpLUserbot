@@ -5,7 +5,7 @@ from . import hl, eor, verify
 
 @End.on_message(filters.command("emojify", hl))
 async def doli(ailika, jhulika: Dev):
-        if not await verify(_, m):
+        if not await verify(ailika, jhulika):
             return
         txt = jhulika.text
         if len(jhulika.command) != 2:
@@ -24,7 +24,7 @@ async def doli(ailika, jhulika: Dev):
 
 @End.on_message(filters.command("crystal", hl))
 async def crystal(ailika, jhulika: Dev):
-    if not await verify(_, m):
+    if not await verify(ailika, jhulika):
         return
     txt = jhulika.text
     if len(jhulika.command)!= 3:
