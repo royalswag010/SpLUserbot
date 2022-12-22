@@ -8,8 +8,9 @@ async def doli(ailika, jhulika: Dev):
         if not await verify(ailika, jhulika):
             return
         txt = jhulika.text
+        m = jhulika
         if len(jhulika.command) != 2:
-            return await jhulika.reply(f"Try: < {hl}emojify Crystal >")
+            return await eor(m, f"Try: < {hl}emojify Crystal >")
         txt = txt.split(None, 1)[1]
         final = ""
         for a in txt:
@@ -26,9 +27,10 @@ async def doli(ailika, jhulika: Dev):
 async def crystal(ailika, jhulika: Dev):
     if not await verify(ailika, jhulika):
         return
+    m = jhulika
     txt = jhulika.text
     if len(jhulika.command)!= 3:
-        return await jhulika.reply(f"Try: < {hl}crystal ✨ doli >")
+        return await eor(m, f"Try: < {hl}crystal ✨ doli >")
     emoji = txt.split(None, 2)[1]
     text = txt.split(None, 2)[2]
     final = ""
