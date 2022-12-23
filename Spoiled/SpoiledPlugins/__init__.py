@@ -4,7 +4,7 @@ from Spoiled.Utils import *
 from pyrogram.types import InlineKeyboardButton as IKB, InlineKeyboardMarkup as IKM
 
 hl = STUFF.COMMAND_HANDLER
-
+#
 startTime = time.time()
 
 COMMANDS_HELP = {}
