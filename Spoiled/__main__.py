@@ -9,20 +9,17 @@ async def initiate():
     try:
         await BOT.start()
         print("Bot started !")
+        await BOT.send_message(CHATS.LOG_GROUP_ID, "Bot started !")
     except FloodWait as e:
         print("Can't start bot, sleeping...")
         await asyncio.sleep(e.value)
     try:
         await SPL.start()
         print("Userbot started !")
+        await BOT.send_message(CHATS.LOG_GROUP_ID, "Userbot started !")
     except FloodWait as e:
-        print(Can't start userbot, sleeping...")
+        print("Can't start userbot, sleeping...")
         await asyncio.sleep(e.value)
-    try:
-        await SPL.send_message(CHATS.LOG_GROUP_ID, "Ub started !")
-        await BOT.send_message(CHATS.LOG_GROUP_ID, "Bot started !")
-    except:
-        pass
     print("Bot started !")
     await idle()
 
