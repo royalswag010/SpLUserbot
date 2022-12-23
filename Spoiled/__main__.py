@@ -7,10 +7,8 @@ import asyncio
 
 async def initiate():
     try:
-        SPL.start()
-        BOT.start()
-        x = SPL.get_me()
-        y = BOT.get_me()
+        await SPL.start()
+        await BOT.start()
     except FloodWait as e:
         await asyncio.sleep(e.value)
     try:
