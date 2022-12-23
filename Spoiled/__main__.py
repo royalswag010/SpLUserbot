@@ -6,7 +6,7 @@ from pyrogram.errors import FloodWait
 import asyncio
 
 async def initiate():
-""@
+"""
     try:
         await BOT.start()
         print("Bot started !")
