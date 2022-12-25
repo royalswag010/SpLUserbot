@@ -1,7 +1,7 @@
 from pyrogram import Client as End, filters
 from pyrogram.types import Message as Dev 
 from Spoiled.Addons.emotes import *
-from . import hl, eor, verify
+from . import hl, eor, verify, add_command
 
 @End.on_message(filters.command("emojify", hl))
 async def doli(ailika, jhulika: Dev):
@@ -43,3 +43,8 @@ async def crystal(ailika, jhulika: Dev):
         else:
             final += a
     await eor(m, final)
+
+command = "Emojify"
+help = f"• {hl}crystal - try \n\n• {hl}emojify - try"
+
+add_command(command, help)
