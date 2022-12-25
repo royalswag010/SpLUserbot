@@ -1,8 +1,12 @@
 from pyrogram.types import InlineQueryResultPhoto as IQRP
 from Spoiled.SpoiledPlugins import build_help_markup, COMMANDS_HELP
 from pyrogram import Client as BOT
+from config import STUFF
 
-URL = "https://telegra.ph/file/c363fbe2341ae115bd8c1.jpg"
+if STUFF.HELP_IMG:
+    URL = STUFF.HELP_IMG
+else:
+    URL = "https://telegra.ph/file/9f22901d5894fd97b69dc.jpg"
 
 ma = build_help_markup(COMMANDS_HELP)
 
