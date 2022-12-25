@@ -26,7 +26,7 @@ async def cbq_0(_, q):
     await q.answer()
     await q.edit_message_text(COMMANDS_HELP[CMDS[0]], reply_markup=back)
 
-BOT.on_callback_query(filters.regex(CMDS[1].lower()))
+@BOT.on_callback_query(filters.regex(CMDS[1].lower()))
 async def cbq_1(_, q):
     global id
     if not id:
@@ -38,7 +38,7 @@ async def cbq_1(_, q):
     await q.answer()
     await q.edit_message_text(COMMANDS_HELP[CMDS[1]], reply_markup=back)
 
-BOT.on_callback_query(filters.regex(CMDS[2].lower()))
+@BOT.on_callback_query(filters.regex(CMDS[2].lower()))
 async def cbq_2(_, q):
     global id
     if not id:
