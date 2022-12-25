@@ -29,6 +29,6 @@ async def make_carbon(code):
     return image
 
 command = "Carbon"
-help = f"• {hl}carbon [reply to a text]"
+help = f"`» {hl}carbon [reply to a text]`"
 
 add_command(command, help)
