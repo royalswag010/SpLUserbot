@@ -1,5 +1,5 @@
 from pyrogram import Client, filters
-from . import hl, eor, verify
+from . import hl, eor, verify, add_command
 from Spoiled.Database.filters import *
 from .watchers import filters_group
 
@@ -104,4 +104,7 @@ async def cwf(_, m):
                     if t[0] == "sticker":
                         return await m.reply_sticker(t[1])
                 
-    
+command = "Filters"
+help = f"`» {hl}filter - set filter.\n\n» {hl}filters - list of filters in a chat.\n\n» {hl}stop - stop filter.`"
+
+add_command(command, help)
