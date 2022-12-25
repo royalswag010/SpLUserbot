@@ -205,7 +205,7 @@ async def dspam_func(_, m):
     STOP = True
     SPAM = False
 
-@Client.on_message(filters.command("stop", hl) & filters.group)
+@Client.on_message(filters.command("endspam", hl) & filters.group)
 async def spam_stop(_, m):
     global SPAM, STOP
     if not await verify(_, m):
