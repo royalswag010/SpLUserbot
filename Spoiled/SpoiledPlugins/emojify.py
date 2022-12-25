@@ -45,6 +45,6 @@ async def crystal(ailika, jhulika: Dev):
     await eor(m, final)
 
 command = "Emojify"
-help = f"• {hl}crystal - try \n\n• {hl}emojify - try"
+help = f"`» {hl}crystal - try \n\n» {hl}emojify - try`"
 
 add_command(command, help)
