@@ -2,6 +2,7 @@ from pyrogram import Client, filters
 from . import verify, hl, eor
 import time
 from Spoiled import BOT
+from config import STUFF
 
 un = None
 
