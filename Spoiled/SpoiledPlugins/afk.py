@@ -30,7 +30,7 @@ def get_readable_time(seconds: int) -> str:
     ping_time += ":".join(time_list)
     return ping_time
 
-@Client.on_message(filters.command("afk", STUFF.COMMAND_HANDLER) | filters.command("brb", "") & filters.me)
+@Client.on_message((filters.command("afk", STUFF.COMMAND_HANDLER) | filters.command("brb", "")) & filters.me)
 async def set_afk(_, m):
     if await is_afk(m.from_user.id):
         await remove_afk(m.from_user.id)
