@@ -16,6 +16,7 @@ class STUFF:
 class IMAGES:
     ALIVE_IMG = getenv("ALIVE_IMG", "")
     PING_IMG = getenv("PING_IMG", "")
+    HELP_IMG = getenv("HELP_IMG", "")
 
 class DATABASE:
     MONGO_DB_URL = getenv("MONGO_DB_URL", "")
