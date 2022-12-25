@@ -86,6 +86,6 @@ async def set_log(_, m):
     return await setlog(id), await eor(m, f"<i>Log chat set successfully..!</i>")
 
 command = "Backup"
-help = f"• {hl}backup - backups private chat.\n\n• {hl}setlog - set group in which messages must be backed up !"
+help = f"`» {hl}backup - backups private chat.\n\n» {hl}setlog - set group in which messages must be backed up !`"
 
 add_command(command, help)
