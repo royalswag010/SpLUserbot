@@ -113,6 +113,6 @@ async def afk_watcher(_, m):
 
 hl = STUFF.COMMAND_HANDLER
 command = "Afk"
-help = f"• {hl}afk - sets you afk !\n\n• brb - same as afk !"
+help = f"`» {hl}afk - sets you afk !\n\n» brb - same as afk !`"
 
 add_command(command, help)
