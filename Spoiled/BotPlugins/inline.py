@@ -1,10 +1,10 @@
 from pyrogram.types import InlineQueryResultPhoto as IQRP
 from Spoiled.SpoiledPlugins import build_help_markup, COMMANDS_HELP
 from pyrogram import Client as BOT
-from config import STUFF
+from config import IMAGES
 
-if STUFF.HELP_IMG:
-    URL = STUFF.HELP_IMG
+if IMAGES.HELP_IMG:
+    URL = IMAGES.HELP_IMG
 else:
     URL = "https://telegra.ph/file/9f22901d5894fd97b69dc.jpg"
 
