@@ -3,7 +3,8 @@ import os
 from PIL import Image, ImageFont, ImageDraw
 from pyrogram import Client, filters
 from config import STUFF
-from Spoiled.Utils import eor, verify, add_command
+from Spoiled.Utils import eor, verify
+from . import add_command
 
 hl = STUFF.COMMAND_HANDLER
 
