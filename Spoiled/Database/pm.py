@@ -60,4 +60,7 @@ async def add_warn(user_id: int):
         l = x["warns"]
         l += 1
         return await warner.update_one({"user_id": user_id}, {"$get": {"warns": l}}, upsert=True)
-    return await warner.update_one({"user_id": user_id#, {"$get": {"warns": 1}}, upsert=True)
+    return await warner.update_one({"user_id": user_id}, {"$get": {"warns": 1}}, upsert=True)
+
+async def reset_warns(user_id: int):
+    return await warner.update_one({"user_id": user_id}, {"$get": {"warns": 0}}, upsert=True)
