@@ -26,7 +26,7 @@ async def alpha_cbq(_, q):
     for x in COMMANDS_HELP:
         if q.data == x.lower():
             await q.answer()
-            await q.edit_message_text(COMMANDS_HELP[x], reply_markup=back)
+            await q.edit_message_text(f"**{x} Help Module\n\n**" + COMMANDS_HELP[x], reply_markup=back)
 
 @BOT.on_callback_query(filters.regex("cmd_back"))
 async def cmd_back(_, q):
