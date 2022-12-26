@@ -21,7 +21,7 @@ async def pmpro(_, m):
     await toggle_pm()
     return await eor(m, "PM PROTECTION DISABLED !")
 
-@Client.on_message(filters.command(["approve", "disapprove"], hl) & filters.me)
+@Client.on_message(filters.command(["approve", "disapprove", "a", "da", "allow", "disallow"], hl) & filters.me)
 async def appro_dis(_, m):
     if str(m.chat.id)[0] == "-":
         try:
@@ -42,5 +42,14 @@ async def appro_dis(_, m):
     await approve(id) 
     return await eor(m, "USER APPROVED TO PM !")
 
-
-        
+@Client.on_message(filters.command("setwarns" hl) & filters.me)
+async def setter(_, m):
+    try:
+        count = int(m.text.split()[1])
+    except:
+        return await eor(m, f"{hl}setwarns [value]")
+    if count == 0:
+        return await eor(m, "GIVE VALUE ABOVE 0 !")
+    await update_warns(count)
+    await eor(m, f"PM WARNS SET TO {count} !")
+    
