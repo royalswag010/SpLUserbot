@@ -1,6 +1,7 @@
 from pyrogram import Client, filters, enums
 from gtts import gTTS
-from Spoiled.Utils import verify, eor, add_command
+from Spoiled.Utils import verify, eor
+from . import add_command
 from config import STUFF
 
 hl = STUFF.COMMAND_HANDLER
