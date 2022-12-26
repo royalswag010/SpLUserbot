@@ -37,3 +37,12 @@ async def is_approved(user_id: int):
     if x:
         return True
     return False
+
+async def list_approved():
+    x = pmap.find({"user_id": {"$gt": 0}})
+    if not x:
+        return []
+    g = []
+    for h in await x.to_list(length=1000000000):
+        g.append(h["user_id"])
+    return g
