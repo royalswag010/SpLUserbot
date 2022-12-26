@@ -1,6 +1,6 @@
 from Spoiled.Database.protecc import *
 from pyrogram import Client, filters
-from . import hl, eor, verify
+from . import hl, eor, verify, add_command 
 from .watchers import protecc_watcher
 import requests
 from bs4 import BeautifulSoup
@@ -146,5 +146,7 @@ async def cwf(_, m):
         await ok.delete()
         os.remove(dl)
     
-    
-    
+command = "Protecc"
+help = f"`» {hl}aw - activates auto waifu for current chat.\n\n» {hl}ah - enables auto husbando for current chat.\n\n» {hl}autowaifu - same as {hl}aw.\n\n» {hl}autohusbando - same as {hl}ah\n\n» {hl}rmaw - remove current chat from auto waifu.\n\n» {hl}rmah - remove current chat from Husbando chats.`"
+
+add_command(command, help)
