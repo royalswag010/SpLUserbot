@@ -1,6 +1,6 @@
 from pyrogram import Client, filters, enums
 from gtts import gTTS
-from Spoiled.Utils import verify, eor
+from Spoiled.Utils import verify, eor, add_command
 from config import STUFF
 
 hl = STUFF.COMMAND_HANDLER
@@ -39,3 +39,7 @@ async def teeteeyess(_, m):
         await m.reply_audio(path)
         await _.send_chat_action(m.chat.id, enums.ChatAction.CANCEL)
             
+command = "TTS"
+help = f"`» {hl}tts - converts text to speech.`"
+
+add_command(command, help)
