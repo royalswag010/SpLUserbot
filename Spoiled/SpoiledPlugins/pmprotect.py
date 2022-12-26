@@ -67,7 +67,7 @@ async def cwf(_, m):
         return
     if await is_approved(m.from_user.id):
         return
-    await warn_user(m.from_user.id)
+    await add_warn(m.from_user.id)
     if await limit() <= await get_warns(m.from_user.id):
         await m.reply("GOOD BYE UNTIL MY MASTER ARRIVES !")
         await _.block_user(m.from_user.id)
