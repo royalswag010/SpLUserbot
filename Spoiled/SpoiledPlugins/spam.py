@@ -1,4 +1,4 @@
-from . import hl, eor, verify, get_reply_and_args
+from . import hl, eor, verify, get_reply_and_args, add_command
 from pyrogram import Client, filters
 import asyncio
 
@@ -216,4 +216,7 @@ async def spam_stop(_, m):
     SPAM = False
     return await eor(m, "Terminated...")
 
-    
+command = "Spam"
+help = f"`» {hl}spam - spams given count of messages (supports stickers and media).\n\n» {hl}dspam | {hl}delayspam - spams messages with a given delay.\n\n» {hl}endspam - for ending ongoing spam.`"
+
+add_command(command, help)
