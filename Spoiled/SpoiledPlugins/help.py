@@ -11,7 +11,7 @@ async def helper_func(_, m):
     x = await verify(_, m)
     if not x:
         return
-    ok = await eor(m, "💎")
+    ok = await eor(m, "🇮🇳")
     try:
         if not un:
             un = (await BOT.get_me()).username
