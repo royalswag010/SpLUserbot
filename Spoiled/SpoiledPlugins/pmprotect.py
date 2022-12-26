@@ -65,7 +65,7 @@ async def setter(_, m):
 async def cwf(_, m):
     if await verify(_, m):
         return
-    if is_approved(m.from_user.id):
+    if await is_approved(m.from_user.id):
         return
     await warn_user(m.from_user.id)
     if await limit() <= await get_warns(m.from_user.id):
