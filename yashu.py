@@ -4,10 +4,6 @@ import time
 from Spoiled import BOT, SPL
 from pyrogram.errors import FloodWait
 
-# SPL = Client(":SPL-USERBOT:", api_id=API.API_ID, api_hash=API.API_HASH, session_string=SECRETS.STRING_SESSION, plugins=dict(root="Spoiled/SpoiledPlugins"))
-
-# BOT = Client(":SPL-BOT:", api_id=API.API_ID, api_hash=API.API_HASH, bot_token=SECRETS.BOT_TOKEN, plugins=dict(root="Spoiled/BotPlugins"))
-
 def initiate():
     try:
         SPL.start()
