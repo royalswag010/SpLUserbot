@@ -54,4 +54,10 @@ async def list_approved():
         g.append(h["user_id"])
     return g
 
-async def add_warn
+async def add_warn(user_id: int):
+    x = await warner.find_one({"user_id": user_id})
+    if x:
+        l = x["warns"]
+        l += 1
+        return await warner.update_one({"user_id": user_id}, {"$get": {"warns": l}}, upsert=True)
+    return await warner.update_one({"user_id": user_id#, {"$get": {"warns": 1}}, upsert=True)
