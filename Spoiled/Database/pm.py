@@ -3,6 +3,7 @@ from . import db
 pmdb = db.pm
 pmwarn = db.pmwarn
 pmap = db.pmapprove
+warner = db.warner
 
 async def toggle_pm():
     x = await pmdb.find_one({"pm": 0})
