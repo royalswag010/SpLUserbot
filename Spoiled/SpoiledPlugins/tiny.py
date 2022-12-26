@@ -2,7 +2,7 @@ import os
 import cv2
 from PIL import Image
 from pyrogram import Client, filters
-from . import hl, verify
+from . import hl, verify, add_command, eor
 
 @Client.on_message(filters.command("tiny", hl))
 async def tiny_rvrnt(_, m):
@@ -10,10 +10,10 @@ async def tiny_rvrnt(_, m):
     if not x:
         return
     if not m.reply_to_message:
-        return await m.reply(f"**Reply to a sticker !**")
+        return await eor(m, f"**Reply to a sticker !**")
     if not m.reply_to_message.sticker:
-        return await m.reply(f"**Reply to a sticker !**")
-    kontol = await m.reply("`Processing tiny...`")
+        return await eor(m, f"**Reply to a sticker !**")
+    kontol = await eor(m, "`Processing tiny...`")
     ik = await m.reply_to_message.download()
     im1 = Image.open("Assets/ken.PNG")
     if ik.endswith(".tgs"):
@@ -77,3 +77,8 @@ async def tiny_rvrnt(_, m):
     await kontol.delete()
     os.remove(file)
     os.remove(ik)
+
+command = "Tiny"
+help = "`» {hl}tiny - try and check.`"
+
+add_command(command, help)
