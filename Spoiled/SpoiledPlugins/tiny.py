@@ -79,6 +79,6 @@ async def tiny_rvrnt(_, m):
     os.remove(ik)
 
 command = "Tiny"
-help = "`» {hl}tiny - try and check.`"
+help = f"`» {hl}tiny - try and check.`"
 
 add_command(command, help)
