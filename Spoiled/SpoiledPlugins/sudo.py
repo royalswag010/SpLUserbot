@@ -3,6 +3,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 from Spoiled.Utils import get_id, eor
 from config import STUFF
+from . import add_command
 
 hl = STUFF.COMMAND_HANDLER
 
@@ -37,3 +38,8 @@ async def sudo_users(_, m):
         SUDO = int(SUDO)
         msg += f"\n<code>{SUDO}</code>"
     return await eor(m, f"<i>Sudo :-</i>\n{msg}\n\n<i>Count :- {len(SUDOS)}</i>")
+
+command = "Sudo"
+help = f"`» {hl}addsudo - add user as sudo.\n\n» {hl}rmsudo - remove user as sudo.\n\n» {hl}sudos - get sudo users.`"
+
+add_command(command, help)
