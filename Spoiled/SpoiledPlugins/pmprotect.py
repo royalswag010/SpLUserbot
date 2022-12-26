@@ -1,6 +1,7 @@
 from pyrogram import Client, filters
 from . import eor, hl, verify, add_command, get_id
 from Spoiled.Database.pm import *
+from .watchers import pm_watcher
 
 @Client.on_message(filters.command("pmprotect", hl) & filters.me)
 async def pmpro(_, m):
@@ -40,6 +41,7 @@ async def appro_dis(_, m):
     if x:
         return await eor(m, "USER ALREADY APPROVED !")
     await approve(id) 
+    await reset_warns(id)
     return await eor(m, "USER APPROVED TO PM !")
 
 @Client.on_message(filters.command("setwarns" hl) & filters.me)
@@ -53,3 +55,9 @@ async def setter(_, m):
     await update_warns(count)
     await eor(m, f"PM WARNS SET TO {count} !")
     
+@Client.on_message(filters.private, group=pm_watcher)
+async def cwf(_, m):
+    if await verify(_, m):
+        return
+    if is_approved(m.from_user.id):
+        return
