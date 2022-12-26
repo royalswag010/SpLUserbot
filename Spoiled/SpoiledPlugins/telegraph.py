@@ -3,6 +3,7 @@ from telegraph import upload_file
 import os
 from config import STUFF
 from Spoiled.Utils import verify, eor
+from . import add_command
 
 hl = STUFF.COMMAND_HANDLER
 
@@ -28,3 +29,8 @@ async def get_link_private(client, message):
             return                 
     except Exception:
         pass        
+
+command = "Telegraph"
+help = f"`» {hl}telegraph - gives telegraph link of replied media.`"
+
+add_command(command, help)
