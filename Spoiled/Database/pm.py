@@ -21,6 +21,12 @@ async def is_pm_on():
 async def update_warns(w: int):
     await pmwarn.update_one({"w": "w"}, {"$set": {"warns": w}}, upsert=True)
 
+async def limit():
+    x = await pmwarn.find_one({"w": "w"})
+    if not x:
+        return 0
+    return x["warns"]
+
 async def approve(user_id: int):
     x = await pmap.find_one({"user_id": user_id})
     if x:
@@ -47,3 +53,5 @@ async def list_approved():
     for h in await x.to_list(length=1000000000):
         g.append(h["user_id"])
     return g
+
+async def add_warn
