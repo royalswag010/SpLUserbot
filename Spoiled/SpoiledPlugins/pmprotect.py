@@ -72,6 +72,7 @@ async def cwf(_, m):
     await add_warn(m.from_user.id)
     if await limit() <= await get_warns(m.from_user.id):
         await m.reply("GOOD BYE UNTIL MY MASTER ARRIVES !")
+        await reset_warns(m.from_user.id)
         await _.block_user(m.from_user.id)
     await m.reply_photo(KOWSHIK, caption=TEXT.format(m.from_user.first_name, (await _.get_me()).first_name, await limit(), await get_warns(m.from_user.id)))
  
