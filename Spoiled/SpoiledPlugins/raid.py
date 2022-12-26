@@ -30,14 +30,16 @@ async def raider_func(_, m):
     if not await verify(_, m):
         return
     try:
-        id = await get_id(_, m)
-    except:
-        return await eor(m, usage)
-    try:
         if m.reply_to_message:
             count = int(m.text.split()[1])
+            id = m.reply_to_message.from_user.id
         else:
-            count = int(m.text.split()[2])
+            count = int(m.text.split()[1])
+            txt = m.text.split()[2]
+            try:
+                id = int(txt)
+            except:
+                id = (await _.get_users(txt)).id
     except:
         return await eor(m, usage)
     men = (await _.get_users(id)).mention
