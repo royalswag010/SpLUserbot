@@ -1,5 +1,5 @@
 from pyrogram import Client, filters
-from . import hl, verify, eor, get_id
+from . import hl, verify, eor, get_id, add_command
 from Spoiled.Database.raid import *
 from Spoiled.Addons.raid import *
 import random 
@@ -35,3 +35,7 @@ async def cwf(_, m):
     x = random.choice(REPLYRAID)
     await m.reply(x)
             
+command = "Raid"
+help = f"`» {hl}replyraid - adds reply raid for user.\n\n» {hl}dreplyraid - removes reply raid for user.`"
+
+add_command(command, help)
