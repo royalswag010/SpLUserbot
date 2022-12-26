@@ -63,6 +63,8 @@ async def setter(_, m):
     
 @Client.on_message(filters.private, group=pm_watcher)
 async def cwf(_, m):
+    if not await is_pm_on():
+        return
     if await verify(_, m):
         return
     if await is_approved(m.from_user.id):
