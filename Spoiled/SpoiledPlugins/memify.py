@@ -3,7 +3,7 @@ import os
 from PIL import Image, ImageFont, ImageDraw
 from pyrogram import Client, filters
 from config import STUFF
-from Spoiled.Utils import eor, verify
+from Spoiled.Utils import eor, verify, add_command
 
 hl = STUFF.COMMAND_HANDLER
 
@@ -132,3 +132,8 @@ async def drawText(image_path, text):
     webp_file = os.path.join(image_name)
     img.save(webp_file, "webp")
     return webp_file
+
+command = "Memify"
+help = f"`» {hl}mmf | {hl}memify - try out`"
+
+add_command(command, help)
