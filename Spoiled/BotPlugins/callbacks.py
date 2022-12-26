@@ -50,7 +50,7 @@ async def cbq_2(_, q):
     await q.answer()
     await q.edit_message_text(COMMANDS_HELP[CMDS[2]], reply_markup=back)
 """
-@BOT.on_callback_query()
+@BOT.on_callback_query(~filters.regex("cmd_back"))
 async def alpha_cbq(_, q):
     global id
     if not id:
