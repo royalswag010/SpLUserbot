@@ -50,7 +50,7 @@ async def appro_dis(_, m):
     await reset_warns(id)
     return await eor(m, "USER APPROVED TO PM !")
 
-@Client.on_message(filters.command("setwarns" hl) & filters.me)
+@Client.on_message(filters.command("setwarns", hl) & filters.me)
 async def setter(_, m):
     try:
         count = int(m.text.split()[1])
