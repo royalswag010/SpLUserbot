@@ -102,6 +102,10 @@ async def rmhusbander(_, m):
 @Client.on_message(filters.group, group=protecc_watcher)
 async def cwf(_, m):
     bots = [husbando_id, waifu_id]
+    if not m.from_user:
+        return
+    if not m.from_user.id:
+        return
     id = m.from_user.id
     if not id in bots:
         return
