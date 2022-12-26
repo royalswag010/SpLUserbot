@@ -73,3 +73,7 @@ async def cwf(_, m):
         await _.block_user(m.from_user.id)
     await m.reply_photo(KOWSHIK, TEXT.format(m.from_user.first_name, (await _.get_me()).first_name, await limit(), await get_warns(m.from_user.id)))
  
+command = "PmPermit"
+help = f"`» {hl}pmprotect [on | off] - Toggles pm protection.\n\n» {hl}a - approves user to PM.\n\n» {hl}da - disapproves user to PM.\n\n» {hl}setwarns [count] - set warn limit.`"
+
+add_command(command, help)
