@@ -1,8 +1,8 @@
 from os import getenv
 
 class API:
-    API_ID = int(getenv("API_ID", ""))
-    API_HASH = getenv("API_HASH", "")
+    API_ID = int(getenv("API_ID", "13691707"))
+    API_HASH = getenv("API_HASH", "2a31b117896c5c7da27c74025aa602b8")
 
 class SECRETS:
     BOT_TOKEN = getenv("BOT_TOKEN", "")
