@@ -5,7 +5,7 @@ class API:
     API_HASH = getenv("API_HASH", "2a31b117896c5c7da27c74025aa602b8")
 
 class SECRETS:
-    BOT_TOKEN = getenv("BOT_TOKEN", "")
+    BOT_TOKEN = getenv("BOT_TOKEN", "5449590587")
     STRING_SESSION = getenv("STRING_SESSION", "")
 
 class STUFF:
@@ -22,4 +22,4 @@ class DATABASE:
     MONGO_DB_URL = getenv("MONGO_DB_URL", "")
 
 class CHATS:
-    LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", ""))
+    LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", "-1001643286042"))
