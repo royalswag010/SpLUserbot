@@ -19,7 +19,7 @@ class IMAGES:
     HELP_IMG = getenv("HELP_IMG", "https://telegra.ph/file/c78c8ab32c754a6461ad3.jpg")
 
 class DATABASE:
-    MONGO_DB_URL = getenv("MONGO_DB_URL", "mongodb+srv://royalswag010:Soham@143@cluster0.lsmghyk.mongodb.net/?retryWrites=true&w=majority")
+    MONGO_DB_URL = getenv("MONGO_DB_URL", "mongodb+srv://royalswag010:<password>@cluster0.lsmghyk.mongodb.net/?retryWrites=true&w=majority")
 
 class CHATS:
     LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", "-1001643286042"))
