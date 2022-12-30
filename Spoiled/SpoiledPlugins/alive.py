@@ -8,6 +8,8 @@ if not STUFF.ALIVE_EMOJI:
 else:
     EMOTES = STUFF.ALIVE_EMOJI
 
+emoji = EMOTES
+
 if not STUFF.ALIVE_TEXT:
     text = "I'm Alive !"
 else:
