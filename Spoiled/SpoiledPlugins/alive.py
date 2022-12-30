@@ -48,4 +48,4 @@ async def aliver(_, m):
     upt = get_uptime(time.time())
     men = (await _.get_me()).mention
     await ok.delete()
-    await m.reply_photo(IMG, caption=form.format(text, upt, men, x))
+    await m.reply_photo(IMG, caption=form.format(text, emoji, emoji, upt, emoji, men, emoji, x))
