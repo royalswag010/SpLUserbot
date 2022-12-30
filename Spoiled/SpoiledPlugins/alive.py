@@ -1,6 +1,6 @@
 from pyrogram import Client, filters
 from . import eor, verify, hl, get_uptime
-from config import STUFF
+from config import STUFF, IMAGES
 import time
 
 if not STUFF.ALIVE_EMOJI:
@@ -12,6 +12,11 @@ if not STUFF.ALIVE_TEXT:
     text = "I'm Alive !"
 else:
     text = STUFF.ALIVE_TEXT
+
+if IMAGES.ALIVE_IMG:
+    IMG = IMAGES.ALIVE_IMG
+else:
+    IMG = "https://telegra.ph/file/7c71bb8e52ea14794561e.jpg"
 
 
 form = """
@@ -42,4 +47,5 @@ async def aliver(_, m):
     x = f"`{x[0:y+2]}`"
     upt = get_uptime(time.time())
     men = (await _.get_me()).mention
-    await eor(ok, form.format(text, EMOTES, EMOTES, upt, EMOTES, men, EMOTES, x))
+    await ok.delete()
+    await m.reply_photo(IMG, caption=form.format(text, upt, men, x))
