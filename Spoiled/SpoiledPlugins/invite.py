@@ -3,6 +3,7 @@ from . import hl, verify, eor
 from Spoiled.Database.invite import *
 import asyncio 
 import time
+from pyrogram.errors import FloodWait, BadRequest
 
 @yashu.on_message(filters.command("verify", hl))
 async def ver(_, m):
