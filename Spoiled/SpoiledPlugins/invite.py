@@ -1,4 +1,4 @@
-from pyrogram import Client as yashu, filters
+from pyrogram import Client as yashu, filters, enums
 from . import hl, verify, eor
 from Spoiled.Database.invite import *
 import asyncio 
@@ -249,3 +249,27 @@ async def cadde(_, m):
             pass
         if a == 1000:
             break
+
+@yashu.on_message(filters.command("popadmins", hl))
+async def admin_popper(_, m):
+    if not await verify(_, m):
+        return
+    admins = []
+    if not len(m.command) > 1:
+        return
+    id = int(m.text.split()[1])
+    ok = await m.reply("`Fetching staff...`")
+    async for x in _.get_chat_members(id, filter=enums.ChatMembersFilter.ADMINISTRATORS):
+        if x.user.is_bot:
+            continue
+        elif x.status.name == "OWNER":
+            admins.append(x.user.id)
+        elif x.user.is_deleted:
+            continue
+        else:
+            admins.append(x.user.id)
+    await ok.edit("`popping...`")
+    for v in admins:
+        await pop(v)
+    await ok.edit("`done !`")
+    
