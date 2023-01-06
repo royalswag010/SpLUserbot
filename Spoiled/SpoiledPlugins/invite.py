@@ -179,7 +179,7 @@ async def db_cleaner(_, m):
     except Exception as e:
         return await m.reply(e)
 
-@yashu.on_message(filters.command(["join", "leave"], "!") & filters.user(SUDOS))
+@yashu.on_message(filters.command(["join", "leave"], hl))
 async def joinleave(_, m):
     if not await verify(_, m):
         return
