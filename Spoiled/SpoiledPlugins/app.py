@@ -6,7 +6,6 @@ from pyrogram import Client, filters
 
 @Client.on_message(filters.command("app", hl))
 async def app_search(_, m):
-    "To search any app in playstore."
     app_name = event.pattern_match.group(1)
     event = await eor(event, "`Searching!..`")
     try:
