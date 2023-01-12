@@ -6,6 +6,8 @@ from pyrogram import Client, filters
 
 @Client.on_message(filters.command("app", hl))
 async def app_search(_, m):
+    if not await verify(_, m):
+        return
     app_name = m.text.split(None, 1)[1]
     event = await eor(m, "`Searching!..`")
     try:
