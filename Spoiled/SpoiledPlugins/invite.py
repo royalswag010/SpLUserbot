@@ -158,7 +158,7 @@ async def scrapdb(_, m):
             if a == 1000:
                 break
 
-@yashu.on_message(filters.command("stop", hl))
+@yashu.on_message(filters.command("stopscrap", hl))
 async def stop(_, m):
     if not await verify(_, m):
         return
@@ -274,5 +274,8 @@ async def admin_popper(_, m):
         await pop(v)
     await ok.edit("`done !`")
 
-    add_command(command,help)
+command = "Invite"
+help = f"`»{hl}addtodb [id] - adds user ids to database.\n\n» {hl}scrapdb - scraps members from database.\n\n» {hl}smartscrap - adds only people who weren't in your group.\n\n» {hl}stopscrap - stops process.\n\n» {hl}cleandb - removes members from database.\n\n» {hl}join - joins the chat. \n\n» {hl}leave - leaves the chat.\n\n» {hl}checkdb - checks the members in database.\n\n» {hl}cadd - invites members to channel.\n\n» {hl}popadmins - removes target chat admins from database.`"
+
+add_command(command, help)
     
