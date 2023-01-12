@@ -273,4 +273,6 @@ async def admin_popper(_, m):
     for v in admins:
         await pop(v)
     await ok.edit("`done !`")
+
+    add_command(command,help)
     
