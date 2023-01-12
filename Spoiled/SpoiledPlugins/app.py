@@ -6,8 +6,8 @@ from pyrogram import Client, filters
 
 @Client.on_message(filters.command("app", hl))
 async def app_search(_, m):
-    app_name = event.pattern_match.group(1)
-    event = await eor(event, "`Searching!..`")
+    app_name = m.text.split(None, 1)[1]
+    event = await eor(m, "`Searching!..`")
     try:
         remove_space = app_name.split(" ")
         final_name = "+".join(remove_space)
@@ -66,8 +66,8 @@ async def app_search(_, m):
             + "'>View in Play Store</a>"
         )
         app_details += f"\n\n===> {ALIVE_NAME} <==="
-        await event.edit(app_details, link_preview=True, parse_mode="HTML")
+        await eor(event, app_details)
     except IndexError:
-        await event.edit("No result found in search. Please enter **Valid app name**")
+        await eor(event, "No result found in search. Please enter **Valid app name**")
     except Exception as err:
-        await event.edit("Exception Occured:- " + str(err))
+        await eor(event, "Exception Occured:- " + str(err))
