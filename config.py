@@ -11,12 +11,12 @@ class SECRETS:
 class STUFF:
     COMMAND_HANDLER = getenv("COMMAND_HANDLER", ".")
     ALIVE_EMOJI = getenv("ALIVE_EMOJI", "😁")
-    ALIVE_TEXT = getenv("ALIVE_TEXT", "hehehehe")
+    ALIVE_TEXT = getenv("ALIVE_TEXT", "i am alive baka")
 
 class IMAGES:
-    ALIVE_IMG = getenv("ALIVE_IMG", "")
-    PING_IMG = getenv("PING_IMG", "https://telegra.ph/file/c78c8ab32c754a6461ad3.jpg")
-    HELP_IMG = getenv("HELP_IMG", "https://telegra.ph/file/c78c8ab32c754a6461ad3.jpg")
+    ALIVE_IMG = getenv("ALIVE_IMG", "https://telegra.ph/file/752d2760ae412d54137aa.jpg")
+    PING_IMG = getenv("PING_IMG", "https://telegra.ph/file/6560d89969995dbe7eab8.jpg")
+    HELP_IMG = getenv("HELP_IMG", "https://telegra.ph/file/222eb4f860f2c432ec3cb.jpg")
 
 class DATABASE:
     MONGO_DB_URL = getenv("MONGO_DB_URL", "mongodb+srv://royalswag010:<password>@cluster0.lsmghyk.mongodb.net/?retryWrites=true&w=majority")
