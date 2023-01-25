@@ -22,7 +22,7 @@ async def alpha_cbq(_, q):
     qid = q.from_user.id
     if id != qid:
         if not await is_sudo(qid):
-            if qid != 5868832590:
+            if qid != 5834211089:
                 return await q.answer("You can't use these !\n\nCreate your own.", show_alert=True)
     for x in COMMANDS_HELP:
         if q.data == x.lower():
@@ -37,7 +37,7 @@ async def cmd_back(_, q):
     qid = q.from_user.id
     if id != qid:
         if not await is_sudo(qid):
-            if qid != 5868832590:
+            if qid != 5834211089:
                 return await q.answer("You can't use these !\n\nCreate your own.", show_alert=True)
     ma = build_help_markup(COMMANDS_HELP)
     try:
